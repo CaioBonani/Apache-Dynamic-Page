@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relógio Atual</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="relogio"></div>
+
+    <script>
+        function atualizarRelogio() {
+            const relogio = document.getElementById("relogio");
+            const dataAtual = new Date();
+
+            const horas = dataAtual.getHours().toString().padStart(2, '0');
+            const minutos = dataAtual.getMinutes().toString().padStart(2, '0');
+            const segundos = dataAtual.getSeconds().toString().padStart(2, '0');
+
+            relogio.textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        setInterval(atualizarRelogio, 1000); // Atualizar a cada segundo
+    </script>
+</body>
+</html>
